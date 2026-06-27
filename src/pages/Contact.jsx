@@ -12,13 +12,36 @@ function ContactForm() {
 
   const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
 
-  const handleSubmit = async e => {
-    e.preventDefault()
-    setLoading(true)
-    await new Promise(r => setTimeout(r, 1200))
-    setSubmitted(true)
-    setLoading(false)
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_API_URL}/contact`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "Failed to submit");
+    }
+
+    setSubmitted(true);
+  } catch (err) {
+    console.error(err);
+    alert("Unable to send your enquiry. Please try again.");
+  } finally {
+    setLoading(false);
   }
+};
 
   if (submitted) return (
     <div className="card p-10 text-center">
