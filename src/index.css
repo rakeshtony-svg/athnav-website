@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-body text-gray-800 bg-white antialiased; }
+  h1, h2, h3 { @apply font-display; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-brand-accent text-white px-6 py-3 rounded-lg font-medium text-sm hover:bg-brand-blue transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-brand-accent text-brand-accent px-6 py-3 rounded-lg font-medium text-sm hover:bg-brand-accent hover:text-white transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 text-brand-accent px-4 py-2 rounded-lg font-medium text-sm hover:bg-brand-light transition-all duration-200;
+  }
+  .section-tag {
+    @apply inline-block text-xs font-semibold tracking-widest uppercase text-brand-accent bg-brand-light px-3 py-1 rounded-full mb-4;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300;
+  }
+  .nav-link {
+    @apply text-sm font-medium text-gray-600 hover:text-brand-accent transition-colors duration-200;
+  }
+  .country-pill {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full bg-brand-light text-brand-blue text-sm font-medium;
+  }
+  .stat-card {
+    @apply flex flex-col items-center text-center p-6 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20;
+  }
+  .input-field {
+    @apply w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent/30 focus:border-brand-accent transition-all;
+  }
+}
+
+/* Scroll reveal utility */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #0B1B3E 0%, #1A3A7A 50%, #0B1B3E 100%);
+}
+
+/* Subtle mesh overlay */
+.mesh-overlay {
+  background-image: radial-gradient(circle at 20% 50%, rgba(59,125,216,0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(240,165,0,0.08) 0%, transparent 40%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #3B7DD8; border-radius: 3px; }
