@@ -39,7 +39,13 @@ const WHY = [
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[calc(100vh-64px)] hero-gradient mesh-overlay flex items-center overflow-hidden">
+    <section
+  className="relative min-h-[calc(100vh-64px)] flex items-center overflow-hidden"
+  style={{
+    background: "#1A3A7A",
+    minHeight: "calc(100vh - 64px)"
+  }}
+>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5"
         style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
