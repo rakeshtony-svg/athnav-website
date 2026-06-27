@@ -47,7 +47,7 @@ function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 items-center">
         {/* Left */}
         <div>
-          <div className="inline-flex items-center gap-2 bg-blue/10 border border-blue/20 rounded-full px-4 py-1.5 text-white text-sm mb-6">
+          <div className="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 text-white text-sm mb-6">
             <span className="w-2 h-2 bg-brand-gold rounded-full animate-pulse"/>
             Trusted by 150+ businesses across 6 countries
           </div>
